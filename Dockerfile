@@ -1,4 +1,4 @@
-FROM centos:7
+FROM centos
 MAINTAINER arbazmtn@gmail.com
 RUN yum install -y htpd \
   zip \
@@ -8,6 +8,6 @@ RUN yum install -y htpd \
  RUN unzip coto.zip
  RUN cp -rvf html/* .
  RUN rm -rf html  coto.zip
- CMD ["/usr/sbin/httpd", "-D",   "FOREGROUND"]
+ CMD ["/usr/bin/httpd", "-D",   "FOREGROUND"]
  EXPOSE 80
 
